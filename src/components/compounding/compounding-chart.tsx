@@ -11,6 +11,7 @@ import {
   ResponsiveContainer
 } from 'recharts'
 import { formatCurrency } from '@/lib/utils'
+import { CURRENCY } from '@/lib/constants'
 
 export interface CompoundingResult {
   trade: number
@@ -45,7 +46,7 @@ export const CompoundingChart: React.FC<CompoundingChartProps> = ({ results }) =
             fontSize={12} 
             tickLine={false} 
             axisLine={false} 
-            tickFormatter={(value) => `$${value >= 1000 ? (value / 1000).toFixed(0) + 'k' : value}`}
+            tickFormatter={(value) => `${CURRENCY}${value >= 1000 ? (value / 1000).toFixed(0) + 'k' : value}`}
           />
           <Tooltip 
             contentStyle={{ 

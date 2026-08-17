@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { GoalCard } from '@/components/goals/goal-card';
 import { AddGoalModal } from '@/components/goals/add-goal-modal';
+import { CURRENCY } from '@/lib/constants';
 
 export default function GoalsPage() {
   const [goals, setGoals] = useState([]);
@@ -47,13 +48,13 @@ export default function GoalsPage() {
           <h3 className="text-slate-400 text-sm font-medium mb-1">Active Goals</h3>
           <p className="text-2xl font-bold text-slate-200">{goals.length}</p>
         </div>
-        <div className="glass rounded-xl p-6">
-          <h3 className="text-slate-400 text-sm font-medium mb-1">Total Target</h3>
-          <p className="text-2xl font-bold text-slate-200">${totalTarget.toLocaleString()}</p>
+        <div className="glass rounded-xl p-6 border-l-4 border-l-slate-400">
+          <p className="text-slate-400 font-medium mb-1">Total Target</p>
+          <p className="text-2xl font-bold text-slate-200">{CURRENCY}{totalTarget.toLocaleString()}</p>
         </div>
-        <div className="glass rounded-xl p-6 border-emerald-500/20">
-          <h3 className="text-slate-400 text-sm font-medium mb-1">Total Achieved</h3>
-          <p className="text-2xl font-bold text-emerald-400">${totalAchieved.toLocaleString()}</p>
+        <div className="glass rounded-xl p-6 border-l-4 border-l-emerald-500">
+          <p className="text-slate-400 font-medium mb-1">Total Achieved</p>
+          <p className="text-2xl font-bold text-emerald-400">{CURRENCY}{totalAchieved.toLocaleString()}</p>
         </div>
       </div>
 

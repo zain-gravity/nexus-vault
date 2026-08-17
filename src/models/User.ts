@@ -14,7 +14,7 @@ const userSchema = new Schema<IUser>({
   email: { type: String, required: true, unique: true, lowercase: true, trim: true },
   passwordHash: { type: String, required: true },
   image: { type: String },
-  currency: { type: String, default: '$' },
+  currency: { type: String, default: '?' },
   createdAt: { type: Date, default: Date.now },
 });
 

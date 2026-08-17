@@ -4,6 +4,7 @@ import { useState, useMemo } from 'react';
 import { CompoundingChart } from '@/components/compounding/compounding-chart';
 import { CompoundingTable } from '@/components/compounding/compounding-table';
 import { calculateCompounding } from '@/lib/utils';
+import { CURRENCY } from '@/lib/constants';
 
 export default function CompoundingPage() {
   const [principal, setPrincipal] = useState(10000);
@@ -30,11 +31,11 @@ export default function CompoundingPage() {
           
           <div className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-slate-400 mb-1">Initial Principal ($)</label>
+              <label className="block text-sm font-medium text-slate-400 mb-1">Initial Principal ({CURRENCY})</label>
               <input type="number" value={principal} onChange={(e) => setPrincipal(Number(e.target.value))} className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500/50" />
             </div>
             <div>
-              <label className="block text-sm font-medium text-slate-400 mb-1">Monthly Contribution ($)</label>
+              <label className="block text-sm font-medium text-slate-400 mb-1">Monthly Contribution ({CURRENCY})</label>
               <input type="number" value={monthlyContribution} onChange={(e) => setMonthlyContribution(Number(e.target.value))} className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500/50" />
             </div>
             <div>
@@ -52,11 +53,11 @@ export default function CompoundingPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="glass rounded-xl p-4">
               <p className="text-slate-400 text-sm mb-1">Final Balance</p>
-              <p className="text-xl font-bold text-slate-200">${finalBalance.toLocaleString(undefined, {maximumFractionDigits: 0})}</p>
+              <p className="text-xl font-bold text-slate-200">{CURRENCY}{finalBalance.toLocaleString(undefined, {maximumFractionDigits: 0})}</p>
             </div>
             <div className="glass rounded-xl p-4">
               <p className="text-slate-400 text-sm mb-1">Total Profit</p>
-              <p className="text-xl font-bold text-emerald-400">+${totalProfit.toLocaleString(undefined, {maximumFractionDigits: 0})}</p>
+              <p className="text-xl font-bold text-emerald-400">+{CURRENCY}{totalProfit.toLocaleString(undefined, {maximumFractionDigits: 0})}</p>
             </div>
             <div className="glass rounded-xl p-4">
               <p className="text-slate-400 text-sm mb-1">Growth Multiplier</p>

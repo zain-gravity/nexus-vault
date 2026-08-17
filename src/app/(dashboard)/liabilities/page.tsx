@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { LiabilityCard } from '@/components/liabilities/liability-card';
 import { ExpenseRow } from '@/components/liabilities/expense-row';
+import { CURRENCY } from '@/lib/constants';
 import { AddLiabilityModal } from '@/components/liabilities/add-liability-modal';
 import { AddExpenseModal } from '@/components/liabilities/add-expense-modal';
 
@@ -43,13 +44,13 @@ export default function LiabilitiesPage() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="glass rounded-xl p-6 border-rose-500/20">
-          <h3 className="text-slate-400 text-sm font-medium mb-1">Total Active Debt</h3>
-          <p className="text-2xl font-bold text-rose-400">${totalDebt.toLocaleString()}</p>
+        <div className="glass rounded-xl p-6 border-l-4 border-l-rose-500">
+          <p className="text-slate-400 font-medium mb-1">Total Debt</p>
+          <p className="text-2xl font-bold text-rose-400">{CURRENCY}{totalDebt.toLocaleString()}</p>
         </div>
-        <div className="glass rounded-xl p-6">
-          <h3 className="text-slate-400 text-sm font-medium mb-1">Monthly EMI Total</h3>
-          <p className="text-2xl font-bold text-slate-200">${monthlyEmi.toLocaleString()}</p>
+        <div className="glass rounded-xl p-6 border-l-4 border-l-slate-400">
+          <p className="text-slate-400 font-medium mb-1">Monthly EMI</p>
+          <p className="text-2xl font-bold text-slate-200">{CURRENCY}{monthlyEmi.toLocaleString()}</p>
         </div>
         <div className="glass rounded-xl p-6 border-emerald-500/20">
           <h3 className="text-slate-400 text-sm font-medium mb-1">Loans Paid Off</h3>

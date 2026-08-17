@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatCurrency(amount: number): string {
-  const currency = process.env.NEXT_PUBLIC_CURRENCY || '$';
+  const currency = process.env.NEXT_PUBLIC_CURRENCY || '?';
   const absAmount = Math.abs(amount);
   const formatted = absAmount.toLocaleString('en-US', {
     minimumFractionDigits: 2,
@@ -16,7 +16,7 @@ export function formatCurrency(amount: number): string {
 }
 
 export function formatCompactCurrency(amount: number): string {
-  const currency = process.env.NEXT_PUBLIC_CURRENCY || '$';
+  const currency = process.env.NEXT_PUBLIC_CURRENCY || '?';
   const absAmount = Math.abs(amount);
   let formatted: string;
   if (absAmount >= 1_000_000) {

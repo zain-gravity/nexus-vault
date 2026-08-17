@@ -8,7 +8,11 @@
 }
 
 body {
-  @apply bg-[#0a0a0f] text-[#e2e8f0] font-sans antialiased;
+  @apply bg-[#030305] text-[#e2e8f0] font-sans antialiased;
+  background-image: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.05), transparent 60%),
+                    radial-gradient(circle at 0% 100%, rgba(59, 130, 246, 0.04), transparent 50%),
+                    radial-gradient(circle at 100% 100%, rgba(244, 63, 94, 0.04), transparent 50%);
+  background-attachment: fixed;
   scroll-behavior: smooth;
 }
 
@@ -17,14 +21,14 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-white/10 rounded-full;
+  @apply bg-white/10 rounded-full border-2 border-[#030305];
 }
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-white/20;
@@ -39,8 +43,9 @@ input:-webkit-autofill:active {
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }

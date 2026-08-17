@@ -1,5 +1,5 @@
 export const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || 'Nexus Vault';
-export const CURRENCY = process.env.NEXT_PUBLIC_CURRENCY || '$';
+export const CURRENCY = process.env.NEXT_PUBLIC_CURRENCY || '?';
 
 export const DATE_RANGE_OPTIONS = [
   { value: 'today', label: 'Today' },

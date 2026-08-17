@@ -11,6 +11,7 @@ import {
   ResponsiveContainer
 } from 'recharts'
 import { formatCurrency } from '@/lib/utils'
+import { CURRENCY } from '@/lib/constants'
 
 export interface IncomeVsExpenseData {
   month: string
@@ -51,7 +52,7 @@ export const IncomeVsExpenseChart: React.FC<IncomeVsExpenseChartProps> = ({ data
             fontSize={12} 
             tickLine={false} 
             axisLine={false} 
-            tickFormatter={(value) => `$${value / 1000}k`}
+            tickFormatter={(value) => `${CURRENCY}${value / 1000}k`}
           />
           <Tooltip 
             contentStyle={{ 
